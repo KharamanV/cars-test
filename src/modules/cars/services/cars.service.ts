@@ -17,11 +17,11 @@ export class CarsService {
     private readonly manufacturerService: ManufacturerService,
   ) {}
 
-  findAll() {
+  findAll(): Promise<Car[]> {
     return this.carRepository.find();
   }
 
-  async findOne(id: string) {
+  async findOne(id: string): Promise<Car> {
     const car: Car | undefined = await this.carRepository.findOne(id);
 
     if (!car) {
@@ -31,7 +31,7 @@ export class CarsService {
     return car;
   }
 
-  async createCar(data: CreateCarDto) {
+  async createCar(data: CreateCarDto): Promise<Car> {
     const manufacturer:
       | Manufacturer
       | undefined = await this.manufacturerService.findOne(data.manufacturerId);
@@ -47,7 +47,7 @@ export class CarsService {
     return this.carRepository.save(car);
   }
 
-  async updateCar(carId: string, data: UpdateCarDto) {
+  async updateCar(carId: string, data: UpdateCarDto): Promise<Car> {
     const { affected } = await this.carRepository.update(carId, data);
 
     if (affected === 0) {
@@ -57,7 +57,7 @@ export class CarsService {
     return this.carRepository.findOne(carId);
   }
 
-  async deleteCar(carId: string) {
+  async deleteCar(carId: string): Promise<void> {
     const { affected } = await this.carRepository.delete(carId);
 
     if (affected === 0) {
@@ -65,7 +65,7 @@ export class CarsService {
     }
   }
 
-  async findCarManufacturer(carId: string) {
+  async findCarManufacturer(carId: string): Promise<Manufacturer> {
     const car = await this.carRepository.findOne(carId);
 
     if (!car) {

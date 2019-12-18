@@ -222,5 +222,10 @@ describe('Cars (e2e)', () => {
 
   afterAll(async () => {
     await app.close();
+
+    return Promise.all([
+      carRepository.query('DELETE FROM cars'),
+      manufacturerRepository.query('DELETE FROM manufacturers'),
+    ]);
   });
 });

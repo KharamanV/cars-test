@@ -1,7 +1,17 @@
 # Documentation
-Cars API
+> Cars API
+
+## Table of Contents
+- [Getting started](#getting-started)
+- [Development](#development)
+- [Production](#production)
+- [Tests](#tests)
+- [Swagger](#swagger)
+- [Troubleshooting](#troubleshooting)
+- [Additional Info](#additional-info)
 
 ## Getting started
+### Prerequisites
 - First of all, create `.env` and `.env.test` config files inside root directory:
 
 ```shell
@@ -37,7 +47,7 @@ for some reason test DB wasn't created. To fix that issue, try to shutdown docke
 docker-compose -f docker-compose.dev.yml down -v && docker-compose -f docker-compose.dev.yml up -d
 ```
 
-## Info
+## Additional Info
 #### Request body validation
 All endpoints protected by `class-validator` package
 

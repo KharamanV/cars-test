@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
 import { Car, CarsModule } from './modules/cars';
 import { Owner, OwnersModule } from './modules/owners';
 import { Manufacturer } from './modules/manufacturers';
