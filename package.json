@@ -29,7 +29,6 @@
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
     "cron": "^1.7.2",
-    "csurf": "^1.10.0",
     "helmet": "^3.21.2",
     "mysql": "^2.14.1",
     "pg": "^7.14.0",

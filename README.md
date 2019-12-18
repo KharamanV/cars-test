@@ -43,4 +43,4 @@ All endpoints protected by `class-validator` package
 
 #### Security
 There is `helmet` package middleware, that adds some small XSS protections, and useful security headers.
-Also, there is some CSRF protection, provided by `csurf` package.
+Also, there is Nginx reverse proxy container, because exposing the node instance in public it's a bad practice. 

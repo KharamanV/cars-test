@@ -23,7 +23,16 @@ services:
     expose:
       - 8080
     ports:
-      - '8080:8080'
+      - '8080'
+
+  web:
+    image: nginx:mainline-alpine
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
+    depends_on:
+      - server
+    ports:
+      - '80:80'
 
 volumes:
   pg_data:
