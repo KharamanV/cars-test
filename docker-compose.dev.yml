@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  database:
+    image: postgres:alpine
+    volumes:
+      - pg_dev_data:/var/lib/postgresql/data
+      - ./scripts/database:/docker-entrypoint-initdb.d
+    restart: always
+    env_file: .env
+    environment:
+      POSTGRES_TEST_DB: cars_test
+    ports:
+      - '5432:5432'
+
+volumes:
+  pg_dev_data:

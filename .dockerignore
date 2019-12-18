@@ -1,0 +1,8 @@
+.logs
+.env*
+coverage/
+**/__*
+**/dist
+**/build
+**/node_modules
+**/Dockerfile
